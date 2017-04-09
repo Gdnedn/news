@@ -1,0 +1,280 @@
+/* 初始化 */
+body{margin:0; padding:0;font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;background:#ebebeb;font-size: .7rem;color: #333333}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,blockquote,p{padding:0; margin:0;}
+input,textarea{padding:0; margin:0;border:none;-webkit-appearance:none;outline:none;font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;font-size: .7rem;color: #333333} /* 去除iphone的input阴影样式-webkit-appearance:none */
+table,td,tr,th{font-size:20px;}
+li{list-style-type:none;}
+img{vertical-align:top;border:0;}
+ol,ul {list-style:none;}
+h1,h2,h3,h4,h5,h6{font-weight:normal;} /* 需要自己定制标题font-size */
+h1{font-size: 1rem;}
+h2{font-size: .9rem;}
+h3{font-size: .8rem;}
+h4{font-size: .7rem;}
+h5{font-size: .65rem;}
+h6{font-size: .6rem;}
+address,cite,code,em,th{font-weight:normal; font-style:normal;}
+a{color:inherit;-webkit-tap-highlight-color:transparent;text-decoration:none;} /* 去除移动端点击色块-webkit-tap-highlight-color:transparent */
+/* rem */
+html{font-size:20px;}
+@media only screen and (min-width: 400px) {html {font-size: 21.33333333px !important;}}
+@media only screen and (min-width: 414px) {html {font-size: 22.08px !important;}}
+@media only screen and (min-width: 480px) {html {font-size: 25.6px !important;}}
+
+.container{
+    padding-bottom: 2.5rem;
+}
+.news-container{
+    background: #ffffff;
+    padding: .75rem .5rem;
+}
+.news-title{
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.news-time{
+    text-align: right;
+    color: #888888;
+    padding: .5rem 0;
+}
+.news-photo-warp{
+    width: 100%;
+    max-height: 15rem;
+    overflow: hidden;
+}
+.news-photo-warp img{
+    width: 100%;
+}
+.news-content{
+    padding-top: 1rem;
+}
+.operation-container{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 2.5rem;
+    padding: .5rem 0;
+    overflow: hidden;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+.operation-warp{
+    float: left;
+    width: 50%;
+    line-height: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+.operation-warp:first-child:after{
+    content: '';
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #eee;
+    width: 1px;
+}
+.operation-icon{
+    font-size: 1rem;
+    color: #cfcfcf;
+}
+.operation-name{
+    font-size: .8rem;
+    color: #666666;
+}
+
+.circle-container{
+    background: #ffffff;
+}
+.user-detail-container{
+    position: relative;
+    padding-bottom: .5rem;
+}
+.user-header-warp{
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    left: .5rem;
+    top: .8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.user-header-warp img{
+    width: 100%;
+    height: 100%;
+}
+.user-info-warp{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: .5rem .5rem 0 3.5rem;
+}
+.user-name{
+    color: #b9cd3a;
+    float: left;
+}
+.user-item-tips{
+    color: #888888;
+    float: right;
+}
+.user-item-tips .iconfont{
+    color: #b9cd3a;
+}
+.user-time{
+    clear: both;
+    color: #888888;
+    padding: .2rem 0;
+}
+.user-content{
+    padding-bottom: .5rem;
+}
+.user-photos-warp{
+    overflow: hidden;
+}
+.user-photo-item{
+    float: left;
+    width: 32.333%;
+    height: 4rem;
+    margin-right: 1%;
+    position: relative;
+}
+.user-photo-item img{
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.vote-container{
+    padding-bottom: 1rem;
+}
+.vote-type{
+    color: #888888;
+    padding-left: .5rem;
+    padding-bottom: .3rem;
+}
+.vote-list{
+    background: #f2f2f2;
+}
+.vote-item{
+    line-height: 1.8rem;
+    height: 1.8rem;
+    padding: 0 .5rem;
+}
+.vote-item .iconfont{
+    font-size: 1rem;
+    width: 2rem;
+    display: inline-block;
+    color: #cfcfcf;
+}
+.vote-name{
+    font-size: .75rem;
+    color: #888888;
+}
+.vote-number{
+    float: right;
+    font-size: .75rem;
+    color: #888888;
+}
+.vote-number-number{
+    padding: 0 .3rem;
+    color: #e3aa13;
+}
+.vote-time{
+    color: #888888;
+    padding: .3rem .5rem;
+}
+.vote-btn{
+    font-size: .8rem;
+    width: 4rem;
+    margin: .5rem auto 0 auto;
+    line-height: 2rem;
+    height: 1.8rem;
+    text-align: center;
+    background: #d5d5d5;
+    color: #ffffff;
+    border-radius: .1rem;
+}
+.circle-operation{
+    line-height: 1.6rem;
+    height: 1.6rem;
+    overflow: hidden;
+    padding-bottom: .2rem;
+}
+.circle-operation-item{
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+.circle-operation-item .iconfont{
+    font-size: .9rem;
+    color: #b9cd3a;
+}
+.circle-operation-name{
+    font-size: .75rem;
+    color: #888888;
+}
+.comment-container{
+    margin-top: .5rem;
+    background: #ffffff;
+}
+.comment-container .user-detail-container{
+    border-bottom: 1px solid #eeeeee;
+}
+.comment-container .user-detail-container:last-child{
+    border-bottom: none;
+}
+.comment-comment-warp{
+    padding: .2rem .4rem;
+    background: #f6f1f7;
+}
+.comment-comment-warp .iconfont{
+    line-height: 1.4rem;
+    color: #b9cd3a;
+    font-size: .8rem;
+}
+.comment-comment-person{
+    color: #b9cd3a;
+}
+.comment-comment-detail{
+    line-height: 1.4rem;
+    font-size: .7rem;
+}
+.comment-comment-detail-name{
+    color: #b9cd3a;
+}
+.your-comment-btn-warp{
+    height: 2.5rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-top: 1px solid #eeeeee;
+    background: #ffffff;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    padding-top: .35rem;
+}
+.your-comment-btn{
+    height: 1.8rem;
+    line-height: 1.8rem;
+    font-size: .8rem;
+    width: 80%;
+    border-radius: .9rem;
+    background: #f6f1f7;
+    color: #888888;
+    text-align: center;
+    margin: 0 auto;
+}
