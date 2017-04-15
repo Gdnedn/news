@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <title>新闻详情</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_tzwgkv5ha3kjfw29.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_tzwgkv5ha3kjfw29.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 <div class="container" id="news">
     <div class="news-container">
-        <h3 class="news-title">{{title}}</h3>
-        <h5 class="news-time">{{time}}</h5>
-        <div class="news-photo-warp"><img :src="photo"></div>
-        <p class="news-content">{{content}}</p>
+        <h3 class="news-title">{{newTitle}}</h3>
+        <h5 class="news-time">{{createTime}}</h5>
+        <div class="news-photo-warp"><img :src="newImg"></div>
+        <p class="news-content">{{newDec}}</p>
     </div>
 
     <a href="download.html">
@@ -30,8 +30,8 @@
     </a>
 </div>
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://unpkg.com/vue"></script>
-<!--<script src="../js/bundle.js"></script>-->
-<script src="http://localhost:8080/bundle.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.2.6/vue.min.js"></script>
+<script src="../js/bundle.js"></script>
+<!--<script src="http://localhost:8080/bundle.js"></script>-->
 </body>
 </html>
