@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
     devtool: 'eval-source-map',
 
@@ -23,5 +25,9 @@ module.exports = {
     devServer: {
         contentBase: "./public",
         inline: true
-    }
+    },
+
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin()
+    ]
 }

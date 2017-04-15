@@ -278,3 +278,48 @@ html{font-size:20px;}
     text-align: center;
     margin: 0 auto;
 }
+.download-container{
+    margin-top: 15%;
+}
+.download-title{
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.download-tips{
+    text-align: center;
+    color: #ffffff;
+    margin-top: .4rem;
+    margin-bottom: .5rem;
+}
+.download-photo{
+    width: 10rem;
+    margin: 0 auto;
+}
+.download-photo img{
+    width: 100%;
+}
+.btn-list{
+    overflow: hidden;
+    margin-top: 1rem;
+}
+.btn-item{
+    width: 50%;
+    float: left;
+}
+.download-btn{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    background: #ffffff;
+    height: 2.4rem;
+    border-radius: 1.2rem;
+    line-height: 2.4rem;
+    color: #ff8a2a;
+    text-align: center;
+    font-size: .8rem;
+}
+.download-btn .iconfont{
+    font-size: 1rem;
+}
