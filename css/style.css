@@ -133,7 +133,15 @@ html{font-size:20px;}
     color: #888888;
     padding: .2rem 0;
 }
+.user-title{
+    padding: 0 0 .2rem 0;
+}
 .user-content{
+    padding-bottom: .5rem;
+}
+.user-link{
+    color: #9b3d1a;
+    display: block;
     padding-bottom: .5rem;
 }
 .user-photos-warp{
@@ -258,6 +266,9 @@ html{font-size:20px;}
 .comment-comment-detail-name{
     color: #b9cd3a;
 }
+.comment-comment-detail-none{
+    color: #222222;
+}
 .your-comment-btn-warp{
     height: 2.5rem;
     -webkit-box-sizing: border-box;
@@ -290,12 +301,14 @@ html{font-size:20px;}
     color: #ffffff;
     font-weight: bold;
     font-size: 1.2rem;
+    padding: 0 1rem;
 }
 .download-tips{
     text-align: center;
     color: #ffffff;
     margin-top: .4rem;
     margin-bottom: .5rem;
+    padding: 0 1rem;
 }
 .download-photo{
     width: 10rem;

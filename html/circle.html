@@ -29,7 +29,9 @@
                     </h5>
                 </a>
                 <h5 class="user-time">{{circleDetail.createTime}}</h5>
+                <h4 class="user-title">{{circleDetail.title}}</h4>
                 <p class="user-content">{{circleDetail.content}}</p>
+                <a class="user-link" v-if="circleDetail.htmlLink" :href="circleDetail.htmlLink">查看详情</a>
                 <div class="user-photos-warp">
                     <div class="user-photo-item" v-for="item in circleDetail.imgs"><img :src="item" @load="photoLoad($event)"></div>
                 </div>
@@ -97,7 +99,9 @@
                         <span class="iconfont icon-dianzan2"></span>
                         <span class="comment-comment-person" v-for="like in item.mLikes">{{like.userName}}</span>
                         <div class="comment-comment-detail" v-for="comment in item.commentList">
-                            <span class="comment-comment-detail-name">{{comment.userName}}：</span>
+                            <span class="comment-comment-detail-name">{{comment.userName}}
+                                <span v-show="comment.replyName!=circleDetail.nickname"><span class="comment-comment-detail-none">回复</span>{{comment.replyName}}</span>:
+                            </span>
                             <span class="comment-comment-detail-content">{{comment.content}}</span>
                         </div>
                     </div>

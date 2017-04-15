@@ -7,6 +7,8 @@ if(document.querySelector("#circle")) {
         el: "#circle",
         data: {
             circleDetail:{
+                htmlLink:'',
+                title:'',
                 likePerson:'',
                 imgs: [],
                 nickname: "",
