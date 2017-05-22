@@ -18,7 +18,6 @@
 
   Infinite.prototype.attachEvents = function(off) {
     var el = this.container;
-    console.log(el)
     var scrollContainer = (el[0].tagName.toUpperCase() === "BODY" ? $(document) : el);
     scrollContainer[off ? "off" : "on"]("scroll", $.proxy(this.scroll, this));
   };
@@ -43,6 +42,3 @@
   }
 
 }($);
-$(document.body).infinite().on('infinite',function(){
-  console.log(1)
-})

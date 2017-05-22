@@ -1,11 +1,41 @@
+import { GetQueryString } from './getQueryString';
+
 if(document.querySelector("#news")){
     var news = new Vue({
         el:"#news",
         data:{
-            title:'把中美关系的大厦建设得更牢、更高、更美——记习近平主席赴美国佛罗里达州海湖庄园同特朗普总统举行中美元首会晤',
-            time:'2017-03-17 19:50:04.0',
-            photo:'../images/demo-news-photo.jpg',
-            content:'当地时间2017年4月7日，习近平在美国佛罗里达州海湖庄园同美国总统特朗普举行中美元首第二场正式会晤。两国元首就中美双边重要领域务实合作和共同关心的国际及地区问题广泛深入交换意见。新华社记者 兰红光 摄'
+            newTitle:'',
+            createTime:'',
+            newImg:'',
+            newDec:'',
+            id:''
+        },
+        mounted: function () {
+            this.$nextTick(function () {
+                this.id = GetQueryString('id');
+                this.ajaxInfo();
+            })
+        },
+        methods:{
+            ajaxInfo:function() {
+                var _this = this;
+                $.ajax({
+                    url:'http://106.14.38.136/SanYanLiangYu/Share/getNewsDetails.do?id='+_this.id,//'../demoJson/news.json',
+                    dataType:'json',
+                    type:'post',
+                    success:function (res) {
+                        if(res.resultCode != 1000){
+                            alert('获取数据失败'+res.resultCode)
+                        }
+                        else {
+                            _this.newTitle = res.returnObject.newTitle;
+                            _this.createTime = res.returnObject.createTime;
+                            _this.newImg = res.returnObject.newImg;
+                            _this.newDec = res.returnObject.newDec;
+                        }
+                    }
+                })
+            }
         }
     });
 }
