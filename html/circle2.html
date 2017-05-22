@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_tzwgkv5ha3kjfw29.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="container" id="circle2">
+    <div class="circle-container">
+        <div class="user-detail-container">
+            <div class="user-header-warp"><img :src="circleDetail.headImg" alt=""></div>
+            <div class="user-info-warp">
+                <h5 class="user-name">{{circleDetail.nickname}}</h5>
+                <a href="download.html">
+                    <h5 class="user-item-tips">
+                        <span class="iconfont icon-huifu"></span>
+                        <span>{{circleDetail.commentPerson}}</span>
+                        <span class="iconfont icon-dianzan2"></span>
+                        <span>{{circleDetail.likePerson}}</span>
+                    </h5>
+                </a>
+                <h5 class="user-time">{{circleDetail.createTime}}</h5>
+                <h4 class="user-title">{{circleDetail.title}}</h4>
+                <p class="user-content">{{circleDetail.content}}</p>
+                <a class="user-link" v-if="circleDetail.htmlLink" :href="circleDetail.htmlLink">查看详情</a>
+                <div class="user-photos-warp">
+                    <div class="user-photo-item" v-for="item in circleDetail.imgs"><img :src="item" @load="photoLoad($event)"></div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="vote-container">-->
+            <!--<h5 class="vote-type">单选</h5>-->
+            <!--<a href="download.html">-->
+                <!--<div class="vote-list">-->
+                    <!--<div class="vote-item">-->
+                        <!--<span class="iconfont icon-danxuan"></span>-->
+                        <!--<span class="vote-name">可以养</span>-->
+                        <!--<div class="vote-number"><span class="vote-number-number">1</span>票</div>-->
+                    <!--</div>-->
+                    <!--<div class="vote-item">-->
+                        <!--<span class="iconfont icon-danxuan"></span>-->
+                        <!--<span class="vote-name">不能，坚决不能</span>-->
+                        <!--<div class="vote-number"><span class="vote-number-number">1</span>票</div>-->
+                    <!--</div>-->
+                    <!--<div class="vote-item">-->
+                        <!--<span class="iconfont icon-danxuan"></span>-->
+                        <!--<span class="vote-name">无所谓</span>-->
+                        <!--<div class="vote-number"><span class="vote-number-number">1</span>票</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</a>-->
+            <!--<h5 class="vote-time">截止投稿日期：2017-01-05 20:04:42.0</h5>-->
+            <!--<div class="vote-btn">已截止</div>-->
+        <!--</div>-->
+        <a href="download.html">
+            <div class="circle-operation">
+                <div class="circle-operation-item">
+                    <span class="iconfont icon-fenxiang1"></span>
+                    <span class="circle-operation-name">分享</span>
+                </div>
+                <div class="circle-operation-item">
+                    <span class="iconfont icon-sc"></span>
+                    <span class="circle-operation-name">收藏</span>
+                </div>
+                <div class="circle-operation-item">
+                    <span class="iconfont icon-huifu"></span>
+                    <span class="circle-operation-name">回复</span>
+                </div>
+                <div class="circle-operation-item">
+                    <span class="iconfont icon-dianzan2"></span>
+                    <span class="circle-operation-name">点赞</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="comment-container">
+        <div class="user-detail-container" v-for="item in circleComment.list">
+            <div class="user-header-warp"><img :src="item.headImg" alt=""></div>
+            <div class="user-info-warp">
+                <h5 class="user-name">{{item.nickname}}</h5>
+                <h5 class="user-item-tips">
+                    <span class="iconfont icon-huifu"></span>
+                    <span>{{item.commentList.length}}</span>
+                </h5>
+                <h5 class="user-time">{{item.createTime}}</h5>
+                <p class="user-content">{{item.content}}</p>
+                <a href="download.html">
+                    <div class="comment-comment-warp">
+                        <span class="iconfont icon-dianzan2"></span>
+                        <span class="comment-comment-person" v-for="like in item.mLikes">{{like.userName}}</span>
+                        <div class="comment-comment-detail" v-for="comment in item.commentList">
+                            <span class="comment-comment-detail-name">{{comment.userName}}
+                                <span v-show="comment.replyName!=circleDetail.nickname"><span class="comment-comment-detail-none">回复</span>{{comment.replyName}}</span>:
+                            </span>
+                            <span class="comment-comment-detail-content">{{comment.content}}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <transition name="fade">
+            <div class="loading-warp" v-if="loading">
+                <span class="weui-loading"></span>
+                <span>加载中...</span>
+            </div>
+        </transition>
+    </div>
+
+
+    <a href="download.html">
+        <div class="your-comment-btn-warp">
+            <div class="your-comment-btn">说说你的看法</div>
+        </div>
+    </a>
+</div>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.2.6/vue.min.js"></script>
+<script src="../js/bundle.js"></script>
+<!--<script src="http://localhost:8080/bundle.js"></script>-->
+</body>
+</html>
