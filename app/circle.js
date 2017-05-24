@@ -49,7 +49,7 @@ if(document.querySelector("#circle")) {
             ajaxDetail:function () {
                 let _this = this;
                 $.ajax({
-                    url:'http://106.14.38.136/SanYanLiangYu/Share/getPostingsDetails.do?PostingsId='+_this.PostingsId,//'../demoJson/circleDetail.json',
+                    url:'http://112.124.122.151:8080/SanYanLiangYu/Share/getPostingsDetails.do?PostingsId='+_this.PostingsId,//'../demoJson/circleDetail.json',
                     dataType:'json',
                     type:'post',
                     success:function (res) {
@@ -65,14 +65,14 @@ if(document.querySelector("#circle")) {
             ajaxComment:function () {
                 let _this = this;
                 $.ajax({
-                    url:'http://106.14.38.136/SanYanLiangYu/Share/postingsComments.do?PostingsId='+_this.PostingsId+'&page='+_this.page,//'../demoJson/circleComment.json',
+                    url:'http://112.124.122.151:8080/SanYanLiangYu/Share/postingsComments.do?PostingsId='+_this.PostingsId+'&page='+_this.page,//'../demoJson/circleComment.json',
                     dataType:'json',
                     type:'post',
                     success:function (res) {
                         if(res.resultCode != 1000){
                             alert('获取数据失败'+res.resultCode)
                         }
-                        else if(res.returnObject.list.length <= 3){
+                        else if(res.returnObject.list.length == 0){
                             _this.infiniteFlag = true;
                             _this.loading = false;
                             return;
@@ -81,6 +81,11 @@ if(document.querySelector("#circle")) {
                             _this.circleComment.list.push(...res.returnObject.list);
                             _this.page++;
                             _this.infiniteFlag = false;
+                            if(res.returnObject.list.length <= 3){
+                                _this.infiniteFlag = true;
+                                _this.loading = false;
+                                return;
+                            }
                         }
                     }
                 })
@@ -168,7 +173,7 @@ else if(document.querySelector("#circle2")) {
                         if(res.resultCode != 1000){
                             alert('获取数据失败'+res.resultCode)
                         }
-                        else if(res.returnObject.list.length <= 3){
+                        else if(res.returnObject.list.length == 0){
                             _this.infiniteFlag = true;
                             _this.loading = false;
                             return;
@@ -177,6 +182,11 @@ else if(document.querySelector("#circle2")) {
                             _this.circleComment.list.push(...res.returnObject.list);
                             _this.page++;
                             _this.infiniteFlag = false;
+                            if(res.returnObject.list.length <= 3){
+                                _this.infiniteFlag = true;
+                                _this.loading = false;
+                                return;
+                            }
                         }
                     }
                 })

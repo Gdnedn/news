@@ -20,7 +20,7 @@ if(document.querySelector("#news")){
             ajaxInfo:function() {
                 var _this = this;
                 $.ajax({
-                    url:'http://106.14.38.136/SanYanLiangYu/Share/getNewsDetails.do?id='+_this.id,//'../demoJson/news.json',
+                    url:'http://112.124.122.151:8080/SanYanLiangYu/Share/getNewsDetails.do?id='+_this.id,//'../demoJson/news.json',
                     dataType:'json',
                     type:'post',
                     success:function (res) {
